@@ -1,0 +1,26 @@
+import random
+
+number = random.randint(1, 99)
+
+flag = True
+while flag:
+    guess = input("Guess a number from 1 to 99: ")
+
+    if guess.isdigit():
+        guess = int(guess)
+        flag = False
+    else:
+        print("Please enter a valid number between 1 and 99.")
+
+num_guesses = 0
+while True:
+    num_guesses += 1
+    if guess < number:
+        print ("Too low.")
+        guess = int(input("Enter an integer from 1 to 99: "))
+    elif guess > number:
+        print ("Too high.")
+        guess = int(input("Guess a number from 1 to 99: "))
+    else:
+        print("You guessed correctly in", num_guesses, "guesses. Congratulations!")
+        break
